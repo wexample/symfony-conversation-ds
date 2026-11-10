@@ -1,0 +1,15 @@
+{%- extends '@front/layouts/private/layout.html.twig' -%}
+
+{#- One conversation read and written in, the others beside it to go to. -#}
+{%- block page_body -%}
+    <div class="grid--aside">
+        <div class="block block--card">
+            {{ vue(render_pass, '@WexampleSymfonyConversationBundle/vue/collection/chat/conversation-chat', conversation_chat) }}
+        </div>
+        <aside class="block block--card">
+            {{ component(render_pass, '@WexampleSymfonyDesignSystemBundle/components/conversation-list', {
+                items: conversation_items,
+            }) }}
+        </aside>
+    </div>
+{%- endblock -%}

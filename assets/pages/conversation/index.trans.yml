@@ -1,0 +1,9 @@
+en:
+  page_title: 'Messages'
+  page_icon: ph:bold/chats-circle
+  empty: 'No conversation yet: open one from someone’s profile.'
+
+fr:
+  page_title: 'Messages'
+  page_icon: ph:bold/chats-circle
+  empty: 'Aucune conversation pour l’instant : ouvrez-en une depuis le profil de quelqu’un.'

@@ -1,0 +1,12 @@
+{%- extends '@front/layouts/private/layout.html.twig' -%}
+
+{#- The conversations of the person signed in, the one that last spoke first;
+    one is opened with someone from their profile. -#}
+{%- block page_body -%}
+    <div class="block block--card">
+        {{ component(render_pass, '@WexampleSymfonyDesignSystemBundle/components/conversation-list', {
+            items: conversation_items,
+            empty: '@page::empty'|trans,
+        }) }}
+    </div>
+{%- endblock -%}

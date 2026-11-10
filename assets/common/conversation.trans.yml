@@ -1,0 +1,7 @@
+en:
+  action:
+    write: 'Send a message'
+
+fr:
+  action:
+    write: 'Envoyer un message'
