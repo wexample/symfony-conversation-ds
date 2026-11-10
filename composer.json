@@ -8,7 +8,7 @@
       "Wexample\\SymfonyConversationDs\\": "src/"
     }
   },
-  "description": "Design-system screens for symfony-conversation: the conversations of the person signed in, one of them read and written in, one opened with someone",
+  "description": "Design-system screens for symfony-conversation",
   "authors": [
     {
       "name": "weeger",
@@ -20,8 +20,7 @@
     "wexample/symfony-conversation": ">=1.0.1",
     "wexample/symfony-design-system": ">=43.0.0",
     "wexample/symfony-helpers": ">=19.1.0",
-    "wexample/symfony-loader": ">=27.0.0",
-    "wexample/symfony-user-ds": ">=9.0.0"
+    "wexample/symfony-loader": ">=27.0.0"
   },
   "repositories": [
     {

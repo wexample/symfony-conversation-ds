@@ -3,10 +3,3 @@ services:
         autowire: true
         autoconfigure: true
         public: false
-
-    Wexample\SymfonyConversationDs\:
-        resource: '../../{Service,Twig}'
-
-    Wexample\SymfonyConversationDs\Controller\:
-        resource: '../../Controller/'
-        tags: ['controller.service_arguments']
