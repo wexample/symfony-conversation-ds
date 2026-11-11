@@ -3,7 +3,6 @@
 namespace Wexample\SymfonyConversationDs\Service;
 
 use Symfony\Component\DependencyInjection\Attribute\AutowireIterator;
-use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 use Wexample\Helpers\Helper\ClassHelper;
 use Wexample\SymfonyConversation\Api\Normalizer\Entity\ConversationParticipant\DefaultParticipantNormalizer;
 use Wexample\SymfonyConversation\Entity\Conversation;
@@ -12,29 +11,26 @@ use Wexample\SymfonyConversation\Interface\ConversationPersonPresenterInterface;
 use Wexample\SymfonyConversation\Repository\ConversationRepository;
 use Wexample\SymfonyConversation\Repository\MessageRepository;
 use Wexample\SymfonyConversation\Repository\UserParticipantRepository;
-use Wexample\SymfonyConversationDs\Controller\Pages\ConversationController;
 use Wexample\SymfonyConversationDs\Interface\ConversationPinProviderInterface;
 use Wexample\SymfonyHelpers\Entity\Interfaces\UserEntityInterface;
 
 /**
- * What the conversation screens draw for the person signed in: their
- * conversations between people as the design system's `conversation-list`
- * takes them, one of them as its chat takes it.
- *
- * A conversation an engine holds — a subclass, with an agent — is drawn by
- * the engine's own chat, where it lives; these screens hold the conversations
- * between people, and the rows the application pins before them
- * (ConversationPinProviderInterface): its agent's.
+ * The conversations of the person signed in as one screen draws them: a tab
+ * each — what the application pins first (ConversationPinProviderInterface),
+ * then the conversations between people, the one that last spoke first —, and
+ * the chat of the one open.
  */
 final readonly class ConversationScreenService
 {
+    /** The component a conversation between people is drawn by. */
+    final public const string CHAT_COMPONENT = '@WexampleSymfonyConversationBundle/vue/collection/chat/conversation-chat';
+
     public function __construct(
         private ConversationRepository $conversations,
         private UserParticipantRepository $userParticipants,
         private MessageRepository $messages,
         private ConversationPersonPresenterInterface $presenter,
         private DefaultParticipantNormalizer $participantNormalizer,
-        private UrlGeneratorInterface $urlGenerator,
         /** @var iterable<ConversationPinProviderInterface> */
         #[AutowireIterator(ConversationPinProviderInterface::TAG)]
         private iterable $pinProviders,
@@ -47,17 +43,17 @@ final readonly class ConversationScreenService
     }
 
     /**
-     * Their conversations, the one that last spoke first, as rows.
+     * The tabs, each with what opens it (`key`) and its chat, asked only of
+     * the one open.
      *
-     * @return list<array<string, mixed>>
+     * @return list<array{key: string, label: string, avatar?: array, unread: int, chat: callable(): array}>
      */
-    public function listItems(UserEntityInterface $user, ?Conversation $active = null): array
+    public function tabs(UserEntityInterface $user): array
     {
-        $items = [];
+        $tabs = [];
 
-        // What the application pins first: its agent's conversation.
         foreach ($this->pinProviders as $provider) {
-            array_push($items, ...$provider->getPinnedConversations($user));
+            array_push($tabs, ...$provider->getPinnedConversations($user));
         }
 
         foreach ($this->conversations->queryForUser($user)->getQuery()->getResult() as $conversation) {
@@ -70,22 +66,20 @@ final readonly class ConversationScreenService
                 $conversation->getParticipants()->toArray(),
                 fn ($participant) => $participant !== $me
             ));
-            $last = $this->messages->findOneBy(['conversation' => $conversation], ['dateCreated' => 'DESC', 'id' => 'DESC']);
 
-            $items[] = [
-                'title' => $this->titleOf($conversation, $others),
-                'href' => $this->urlGenerator->generate(ConversationController::ROUTE_SHOW, ['id' => $conversation->getId()]),
-                'preview' => $last?->getBody(),
-                'date' => $conversation->getDateLastMessage() ?? $conversation->getDateCreated(),
+            $tabs[] = [
+                'key' => (string) $conversation->getId(),
+                'label' => $this->titleOf($conversation, $others),
+                'avatar' => $others ? $this->face($others[0]) : null,
                 'unread' => $me ? $this->messages->countUnreadFor($me) : 0,
-                'active' => $active && $active->getId()->equals($conversation->getId()),
-                ...(1 === count($others)
-                    ? ['avatar' => $this->face($others[0])]
-                    : ['people' => array_map(fn ($participant) => $this->face($participant), $others)]),
+                'chat' => fn () => [
+                    'component' => self::CHAT_COMPONENT,
+                    'props' => $this->chatProps($conversation, $user),
+                ],
             ];
         }
 
-        return $items;
+        return $tabs;
     }
 
     /**
@@ -114,17 +108,6 @@ final readonly class ConversationScreenService
     {
         return $conversation->getTitle()
             ?: implode(', ', array_map(fn ($participant) => $participant->getLabel(), $others));
-    }
-
-    /**
-     * The faces of some participants, as the design system's avatar-group takes them.
-     *
-     * @param ConversationParticipant[] $participants
-     * @return list<array{label: string, src: ?string, emoji: ?string}>
-     */
-    public function facesOf(array $participants): array
-    {
-        return array_values(array_map(fn (ConversationParticipant $participant) => $this->face($participant), $participants));
     }
 
     /** @return array{label: string, src: ?string, emoji: ?string} */

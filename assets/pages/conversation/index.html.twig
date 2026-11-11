@@ -1,13 +1,33 @@
 {%- extends '@front/layouts/private/layout.html.twig' -%}
 
-{#- The conversations of the person signed in, the one that last spoke first,
-    what the application pins before them — its agent —; one opened goes on
-    where the list is held (`self`): the dock's panel, or this page. -#}
+{#- The conversations of the person signed in, one screen: a column of faces
+    — a tab each, the agent's first, a tab to start one at their foot —, the
+    open one's chat beside them, edge to edge, its input at the foot. A tab
+    opens the screen again where it is held (`self`): the dock's panel. -#}
+{%- set page_zone_flush = true -%}
+
 {%- block page_body -%}
-    <div class="conversation-screen" data-target-embedded="self">
-        {{ component(render_pass, '@WexampleSymfonyDesignSystemBundle/components/conversation-list', {
-            items: conversation_items,
-            empty: '@page::empty'|trans,
-        }) }}
+    <div class="page--fill conversation-screen">
+        <div class="conversation-screen--tabs" data-target-embedded="self">
+            {{ component(render_pass, '@WexampleSymfonyDesignSystemBundle/components/avatar-tabs', {
+                items: conversation_tabs,
+                add: conversation_add|merge({ label: '@page::start'|trans }),
+                label: '@page::page_title'|trans,
+            }) }}
+        </div>
+        <div class="conversation-screen--chat">
+            {%- if conversation_starting -%}
+                <div class="block block--padded" data-target-embedded="self">
+                    {{ vue(render_pass, '@WexampleSymfonyConversationDsBundle/vue/conversation-start', {
+                        withUrl: path('conversation_index') ~ 'with/__user__',
+                        placeholder: '@page::search'|trans,
+                    }) }}
+                </div>
+            {%- elseif conversation_chat -%}
+                {{ vue(render_pass, conversation_chat.component, conversation_chat.props) }}
+            {%- else -%}
+                <p class="block block--padded">{{ '@page::empty'|trans }}</p>
+            {%- endif -%}
+        </div>
     </div>
 {%- endblock -%}

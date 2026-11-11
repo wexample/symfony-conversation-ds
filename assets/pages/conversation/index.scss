@@ -1,1 +1,23 @@
-@use '@wexample/symfony-design-system/components/conversation-list/conversation-list';
+@use '@wexample/symfony-design-system/components/avatar-tabs/avatar-tabs';
+@use '@wexample/symfony-design-system/css/shapes/chat';
+
+// The column of faces on the start, the chat taking what is left beside it.
+.conversation-screen {
+  display: flex;
+  flex-direction: row;
+  min-height: 0;
+}
+
+.conversation-screen--tabs {
+  flex: none;
+  overflow-y: auto;
+  border-inline-end: var(--border-separator);
+}
+
+.conversation-screen--chat {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 0;
+}

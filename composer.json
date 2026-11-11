@@ -21,7 +21,8 @@
     "wexample/symfony-design-system": ">=43.0.0",
     "wexample/symfony-helpers": ">=19.1.0",
     "wexample/symfony-loader": ">=27.2.0",
-    "wexample/symfony-user-ds": ">=9.0.0"
+    "wexample/symfony-user-ds": ">=9.0.0",
+    "wexample/symfony-search": ">=6.0.0"
   },
   "repositories": [
     {
