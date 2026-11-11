@@ -6,12 +6,14 @@ use Symfony\Bundle\SecurityBundle\Security;
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 use Symfony\Contracts\Translation\TranslatorInterface;
 use Wexample\SymfonyConversationDs\Controller\Pages\ConversationController;
+use Wexample\SymfonyConversationDs\Service\ConversationScreenService;
 use Wexample\SymfonyHelpers\Entity\Interfaces\UserEntityInterface;
 use Wexample\SymfonyUserDs\Interface\AccountActionProviderInterface;
 
 /**
  * Writing to the holder of an account, from its page: the conversation of the
- * two, opened if they hold none. Not to oneself.
+ * two, opened if they hold none. Not to oneself, nor where people do not
+ * write to each other.
  */
 final readonly class ConversationAccountActionProvider implements AccountActionProviderInterface
 {
@@ -19,6 +21,7 @@ final readonly class ConversationAccountActionProvider implements AccountActionP
         private Security $security,
         private UrlGeneratorInterface $urlGenerator,
         private TranslatorInterface $translator,
+        private ConversationScreenService $screen,
     ) {
     }
 
@@ -26,7 +29,7 @@ final readonly class ConversationAccountActionProvider implements AccountActionP
     {
         $user = $this->security->getUser();
 
-        if (! $user instanceof UserEntityInterface || (string) $user->getId() === (string) $account['id']) {
+        if (! $this->screen->hasPeople() || ! $user instanceof UserEntityInterface || (string) $user->getId() === (string) $account['id']) {
             return [];
         }
 

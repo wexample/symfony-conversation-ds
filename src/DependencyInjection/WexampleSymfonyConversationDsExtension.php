@@ -8,10 +8,15 @@ use Wexample\SymfonyHelpers\DependencyInjection\AbstractWexampleSymfonyExtension
 
 class WexampleSymfonyConversationDsExtension extends AbstractWexampleSymfonyExtension
 {
+    final public const string PARAMETER_PEOPLE = 'wexample_symfony_conversation_ds.people';
+
     public function load(
         array $configs,
         ContainerBuilder $container
     ): void {
+        $config = $this->processConfiguration(new Configuration(), $configs);
+        $container->setParameter(self::PARAMETER_PEOPLE, $config['people']);
+
         // What an application pins at the head of the conversations: found
         // by being one.
         $container->registerForAutoconfiguration(ConversationPinProviderInterface::class)

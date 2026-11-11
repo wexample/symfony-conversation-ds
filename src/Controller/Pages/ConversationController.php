@@ -45,6 +45,10 @@ final class ConversationController extends AbstractPagesController
             $open = $tabs[0]['key'];
         }
 
+        if (self::OPEN_NEW === $open && ! $screen->hasPeople()) {
+            throw $this->createNotFoundException();
+        }
+
         $chat = null;
         $items = [];
 
@@ -62,10 +66,10 @@ final class ConversationController extends AbstractPagesController
 
         return $this->renderPage('index', [
             'conversation_tabs' => $items,
-            'conversation_add' => [
+            'conversation_add' => $screen->hasPeople() ? [
                 'href' => $this->generateUrl(self::ROUTE_INDEX, [self::QUERY_OPEN => self::OPEN_NEW]),
                 'active' => self::OPEN_NEW === $open,
-            ],
+            ] : null,
             'conversation_chat' => $chat,
             'conversation_starting' => self::OPEN_NEW === $open,
         ]);
@@ -77,7 +81,12 @@ final class ConversationController extends AbstractPagesController
         string $user,
         EntityManagerInterface $entityManager,
         ConversationService $conversationService,
+        ConversationScreenService $screen,
     ): Response {
+        if (! $screen->hasPeople()) {
+            throw $this->createNotFoundException();
+        }
+
         $other = $entityManager->getRepository(UserEntityInterface::class)->find($user)
             ?? throw $this->createNotFoundException();
 

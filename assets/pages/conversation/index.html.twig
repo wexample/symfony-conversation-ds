@@ -13,13 +13,18 @@
         the foot and only its thread scrolls. -#}
     <div class="page--fill">
         <div class="zone--split zone--split--joined">
-            <div class="zone zone--narrow" data-target-embedded="self">
-                {{ component(render_pass, '@WexampleSymfonyDesignSystemBundle/components/avatar-tabs', {
-                    items: conversation_tabs,
-                    add: conversation_add|merge({ label: '@page::start'|trans }),
-                    label: '@page::page_title'|trans,
-                }) }}
-            </div>
+            {#- One conversation and nothing to start another with — an
+                application whose people talk with its agent alone —: its
+                chat, and no column to choose from. -#}
+            {%- if conversation_tabs|length > 1 or conversation_add -%}
+                <div class="zone zone--narrow" data-target-embedded="self">
+                    {{ component(render_pass, '@WexampleSymfonyDesignSystemBundle/components/avatar-tabs', {
+                        items: conversation_tabs,
+                        add: conversation_add ? conversation_add|merge({ label: '@page::start'|trans }) : null,
+                        label: '@page::page_title'|trans,
+                    }) }}
+                </div>
+            {%- endif -%}
             <div class="zone">
                 <div class="page--fill">
                     {%- if conversation_starting -%}

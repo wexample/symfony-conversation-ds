@@ -2,6 +2,7 @@
 
 namespace Wexample\SymfonyConversationDs\Service;
 
+use Symfony\Component\DependencyInjection\Attribute\Autowire;
 use Symfony\Component\DependencyInjection\Attribute\AutowireIterator;
 use Wexample\Helpers\Helper\ClassHelper;
 use Wexample\SymfonyConversation\Entity\Conversation;
@@ -11,6 +12,7 @@ use Wexample\SymfonyConversation\Repository\ConversationRepository;
 use Wexample\SymfonyConversation\Repository\MessageRepository;
 use Wexample\SymfonyConversation\Repository\UserParticipantRepository;
 use Wexample\SymfonyConversation\Service\ConversationChatPropsService;
+use Wexample\SymfonyConversationDs\DependencyInjection\WexampleSymfonyConversationDsExtension;
 use Wexample\SymfonyConversationDs\Interface\ConversationPinProviderInterface;
 use Wexample\SymfonyHelpers\Entity\Interfaces\UserEntityInterface;
 
@@ -34,7 +36,15 @@ final readonly class ConversationScreenService
         /** @var iterable<ConversationPinProviderInterface> */
         #[AutowireIterator(ConversationPinProviderInterface::TAG)]
         private iterable $pinProviders,
+        #[Autowire(param: WexampleSymfonyConversationDsExtension::PARAMETER_PEOPLE)]
+        private bool $people,
     ) {
+    }
+
+    /** Whether the people of the application write to each other here. */
+    public function hasPeople(): bool
+    {
+        return $this->people;
     }
 
     public static function isBetweenPeople(Conversation $conversation): bool
@@ -54,6 +64,10 @@ final readonly class ConversationScreenService
 
         foreach ($this->pinProviders as $provider) {
             array_push($tabs, ...$provider->getPinnedConversations($user));
+        }
+
+        if (! $this->people) {
+            return $tabs;
         }
 
         foreach ($this->conversations->queryForUser($user)->getQuery()->getResult() as $conversation) {
