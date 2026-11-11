@@ -1,0 +1,17 @@
+{%- extends '@front/layouts/private/layout.html.twig' -%}
+
+{#- One conversation read and written in, edge to edge, its input at the foot;
+    over it, the way back to the list — where it is held, as it was opened —,
+    what it is called and who takes part. -#}
+{%- set page_zone_flush = true -%}
+
+{%- block page_body -%}
+    <div class="page--fill conversation-screen">
+        <div class="toolbar conversation-screen--head" data-target-embedded="self">
+            <a class="action-icon" href="{{ path('conversation_index') }}" aria-label="{{ '@page::back'|trans }}" data-tooltip="{{ '@page::back'|trans }}">{{ icon('ph:bold/arrow-left') }}</a>
+            {{ component(render_pass, '@WexampleSymfonyDesignSystemBundle/components/avatar-group', { items: conversation_people, max: 3 }) }}
+            <span class="conversation-screen--title">{{ page_title }}</span>
+        </div>
+        {{ vue(render_pass, '@WexampleSymfonyConversationBundle/vue/collection/chat/conversation-chat', conversation_chat) }}
+    </div>
+{%- endblock -%}

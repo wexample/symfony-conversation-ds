@@ -1,0 +1,114 @@
+en:
+  page_title: "Conversations"
+  page_icon: ph:bold/chats-circle
+  empty: "No conversation yet: open one from someone’s profile."
+
+fr:
+  page_title: "Conversations"
+  page_icon: ph:bold/chats-circle
+  empty: "Aucune conversation pour l’instant : ouvrez-en une depuis le profil de quelqu’un."
+
+ar:
+  page_title: "المحادثات"
+  page_icon: ph:bold/chats-circle
+  empty: "لا توجد محادثة بعد: افتح واحدة من الملف الشخصي لأحدهم."
+
+bn:
+  page_title: "কথোপকথন"
+  page_icon: ph:bold/chats-circle
+  empty: "এখনও কোনো কথোপকথন নেই: কারও প্রোফাইল থেকে একটি খুলুন।"
+
+de:
+  page_title: "Gespräche"
+  page_icon: ph:bold/chats-circle
+  empty: "Noch kein Gespräch: Öffne eines im Profil einer Person."
+
+es:
+  page_title: "Conversaciones"
+  page_icon: ph:bold/chats-circle
+  empty: "Ninguna conversación todavía: abre una desde el perfil de alguien."
+
+fa:
+  page_title: "گفتگوها"
+  page_icon: ph:bold/chats-circle
+  empty: "هنوز گفتگویی نیست: یکی را از نمایهٔ کسی باز کنید."
+
+fi:
+  page_title: "Keskustelut"
+  page_icon: ph:bold/chats-circle
+  empty: "Ei vielä keskusteluja: avaa sellainen jonkun profiilista."
+
+he:
+  page_title: "שיחות"
+  page_icon: ph:bold/chats-circle
+  empty: "עדיין אין שיחה: פתחו אחת מהפרופיל של מישהו."
+
+hi:
+  page_title: "बातचीत"
+  page_icon: ph:bold/chats-circle
+  empty: "अभी कोई बातचीत नहीं: किसी की प्रोफ़ाइल से एक खोलें।"
+
+id:
+  page_title: "Percakapan"
+  page_icon: ph:bold/chats-circle
+  empty: "Belum ada percakapan: buka satu dari profil seseorang."
+
+it:
+  page_title: "Conversazioni"
+  page_icon: ph:bold/chats-circle
+  empty: "Ancora nessuna conversazione: aprine una dal profilo di qualcuno."
+
+ja:
+  page_title: "会話"
+  page_icon: ph:bold/chats-circle
+  empty: "まだ会話はありません:誰かのプロフィールから始めてください。"
+
+ko:
+  page_title: "대화"
+  page_icon: ph:bold/chats-circle
+  empty: "아직 대화가 없습니다: 누군가의 프로필에서 시작하세요."
+
+nl:
+  page_title: "Gesprekken"
+  page_icon: ph:bold/chats-circle
+  empty: "Nog geen gesprek: open er een vanaf iemands profiel."
+
+pl:
+  page_title: "Rozmowy"
+  page_icon: ph:bold/chats-circle
+  empty: "Jeszcze brak rozmów: rozpocznij jedną z czyjegoś profilu."
+
+pt_BR:
+  page_title: "Conversas"
+  page_icon: ph:bold/chats-circle
+  empty: "Nenhuma conversa ainda: abra uma a partir do perfil de alguém."
+
+ru:
+  page_title: "Разговоры"
+  page_icon: ph:bold/chats-circle
+  empty: "Пока нет разговоров: начните его из чьего-нибудь профиля."
+
+th:
+  page_title: "บทสนทนา"
+  page_icon: ph:bold/chats-circle
+  empty: "ยังไม่มีบทสนทนา: เริ่มได้จากโปรไฟล์ของใครสักคน"
+
+tr:
+  page_title: "Konuşmalar"
+  page_icon: ph:bold/chats-circle
+  empty: "Henüz konuşma yok: birinin profilinden bir tane başlatın."
+
+ur:
+  page_title: "گفتگوئیں"
+  page_icon: ph:bold/chats-circle
+  empty: "ابھی کوئی گفتگو نہیں: کسی کے پروفائل سے ایک شروع کریں۔"
+
+vi:
+  page_title: "Cuộc trò chuyện"
+  page_icon: ph:bold/chats-circle
+  empty: "Chưa có cuộc trò chuyện nào: hãy mở một cuộc từ hồ sơ của ai đó."
+
+zh:
+  page_title: "对话"
+  page_icon: ph:bold/chats-circle
+  empty: "暂无对话:从某人的个人资料中发起一个。"

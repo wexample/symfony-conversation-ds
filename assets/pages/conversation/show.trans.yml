@@ -1,0 +1,114 @@
+en:
+  page_title: "Conversation"
+  page_icon: ph:bold/chats-circle
+  back: "Back to the conversations"
+
+fr:
+  page_title: "Conversation"
+  page_icon: ph:bold/chats-circle
+  back: "Retour aux conversations"
+
+ar:
+  page_title: "محادثة"
+  page_icon: ph:bold/chats-circle
+  back: "العودة إلى المحادثات"
+
+bn:
+  page_title: "কথোপকথন"
+  page_icon: ph:bold/chats-circle
+  back: "কথোপকথনে ফিরে যান"
+
+de:
+  page_title: "Gespräch"
+  page_icon: ph:bold/chats-circle
+  back: "Zurück zu den Gesprächen"
+
+es:
+  page_title: "Conversación"
+  page_icon: ph:bold/chats-circle
+  back: "Volver a las conversaciones"
+
+fa:
+  page_title: "گفتگو"
+  page_icon: ph:bold/chats-circle
+  back: "بازگشت به گفتگوها"
+
+fi:
+  page_title: "Keskustelu"
+  page_icon: ph:bold/chats-circle
+  back: "Takaisin keskusteluihin"
+
+he:
+  page_title: "שיחה"
+  page_icon: ph:bold/chats-circle
+  back: "חזרה לשיחות"
+
+hi:
+  page_title: "बातचीत"
+  page_icon: ph:bold/chats-circle
+  back: "बातचीत पर वापस जाएँ"
+
+id:
+  page_title: "Percakapan"
+  page_icon: ph:bold/chats-circle
+  back: "Kembali ke percakapan"
+
+it:
+  page_title: "Conversazione"
+  page_icon: ph:bold/chats-circle
+  back: "Torna alle conversazioni"
+
+ja:
+  page_title: "会話"
+  page_icon: ph:bold/chats-circle
+  back: "会話一覧に戻る"
+
+ko:
+  page_title: "대화"
+  page_icon: ph:bold/chats-circle
+  back: "대화 목록으로"
+
+nl:
+  page_title: "Gesprek"
+  page_icon: ph:bold/chats-circle
+  back: "Terug naar de gesprekken"
+
+pl:
+  page_title: "Rozmowa"
+  page_icon: ph:bold/chats-circle
+  back: "Wróć do rozmów"
+
+pt_BR:
+  page_title: "Conversa"
+  page_icon: ph:bold/chats-circle
+  back: "Voltar às conversas"
+
+ru:
+  page_title: "Разговор"
+  page_icon: ph:bold/chats-circle
+  back: "Назад к разговорам"
+
+th:
+  page_title: "บทสนทนา"
+  page_icon: ph:bold/chats-circle
+  back: "กลับไปที่บทสนทนา"
+
+tr:
+  page_title: "Konuşma"
+  page_icon: ph:bold/chats-circle
+  back: "Konuşmalara dön"
+
+ur:
+  page_title: "گفتگو"
+  page_icon: ph:bold/chats-circle
+  back: "گفتگوؤں پر واپس"
+
+vi:
+  page_title: "Cuộc trò chuyện"
+  page_icon: ph:bold/chats-circle
+  back: "Quay lại các cuộc trò chuyện"
+
+zh:
+  page_title: "对话"
+  page_icon: ph:bold/chats-circle
+  back: "返回对话列表"

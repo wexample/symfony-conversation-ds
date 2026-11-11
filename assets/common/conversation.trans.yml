@@ -1,0 +1,91 @@
+en:
+  action:
+    write: "Send a message"
+
+fr:
+  action:
+    write: "Envoyer un message"
+
+ar:
+  action:
+    write: "إرسال رسالة"
+
+bn:
+  action:
+    write: "বার্তা পাঠান"
+
+de:
+  action:
+    write: "Nachricht senden"
+
+es:
+  action:
+    write: "Enviar un mensaje"
+
+fa:
+  action:
+    write: "ارسال پیام"
+
+fi:
+  action:
+    write: "Lähetä viesti"
+
+he:
+  action:
+    write: "שליחת הודעה"
+
+hi:
+  action:
+    write: "संदेश भेजें"
+
+id:
+  action:
+    write: "Kirim pesan"
+
+it:
+  action:
+    write: "Invia un messaggio"
+
+ja:
+  action:
+    write: "メッセージを送る"
+
+ko:
+  action:
+    write: "메시지 보내기"
+
+nl:
+  action:
+    write: "Bericht sturen"
+
+pl:
+  action:
+    write: "Wyślij wiadomość"
+
+pt_BR:
+  action:
+    write: "Enviar uma mensagem"
+
+ru:
+  action:
+    write: "Написать сообщение"
+
+th:
+  action:
+    write: "ส่งข้อความ"
+
+tr:
+  action:
+    write: "Mesaj gönder"
+
+ur:
+  action:
+    write: "پیغام بھیجیں"
+
+vi:
+  action:
+    write: "Gửi tin nhắn"
+
+zh:
+  action:
+    write: "发送消息"
