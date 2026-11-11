@@ -1,0 +1,10 @@
+{#- How many lines wait for the person signed in, followed live from anywhere
+    on the page: nothing drawn here, the count shown is the one a tool of
+    the dock hangs on its icon (`tool`, its name — tool_dock(), `count`,
+    first given `conversation_unread_count()`). Heard on the person's own
+    topic (`user`, their id), where the application opens its accounts to
+    live subscription. -#}
+<span {{ component_render_tag_attributes({ class: 'conversation-unread' }) }}
+      data-user="{{ user }}"
+      data-tool="{{ tool }}"
+      hidden></span>
