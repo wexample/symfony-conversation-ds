@@ -7,27 +7,37 @@
 {%- set page_zone_flush = true -%}
 
 {%- block page_body -%}
-    <div class="page--fill conversation-screen">
-        <div class="conversation-screen--tabs" data-target-embedded="self">
-            {{ component(render_pass, '@WexampleSymfonyDesignSystemBundle/components/avatar-tabs', {
-                items: conversation_tabs,
-                add: conversation_add|merge({ label: '@page::start'|trans }),
-                label: '@page::page_title'|trans,
-            }) }}
-        </div>
-        <div class="conversation-screen--chat">
-            {%- if conversation_starting -%}
-                <div class="block block--padded" data-target-embedded="self">
-                    {{ vue(render_pass, '@WexampleSymfonyConversationDsBundle/vue/conversation-start', {
-                        withUrl: path('conversation_index') ~ 'with/__user__',
-                        placeholder: '@page::search'|trans,
-                    }) }}
+    {#- A row of two zones: the column of faces, on the structure's ground,
+        and the open tab beside it — a chat, or the screen starting one —,
+        each a fill handing its height down, so a chat keeps its input at
+        the foot and only its thread scrolls. -#}
+    <div class="page--fill">
+        <div class="zone--split zone--split--joined">
+            <div class="zone zone--narrow" data-target-embedded="self">
+                {{ component(render_pass, '@WexampleSymfonyDesignSystemBundle/components/avatar-tabs', {
+                    items: conversation_tabs,
+                    add: conversation_add|merge({ label: '@page::start'|trans }),
+                    label: '@page::page_title'|trans,
+                }) }}
+            </div>
+            <div class="zone">
+                <div class="page--fill">
+                    {%- if conversation_starting -%}
+                        <div class="zone--content stack--vertical" data-target-embedded="self">
+                            <h2>{{ '@page::start'|trans }}</h2>
+                            <p>{{ '@page::start_help'|trans }}</p>
+                            {{ vue(render_pass, '@WexampleSymfonyConversationDsBundle/vue/conversation-start', {
+                                withUrl: path('conversation_index') ~ 'with/__user__',
+                                placeholder: '@page::search'|trans,
+                            }) }}
+                        </div>
+                    {%- elseif conversation_chat -%}
+                        {{ vue(render_pass, conversation_chat.component, conversation_chat.props) }}
+                    {%- else -%}
+                        <p class="empty">{{ '@page::empty'|trans }}</p>
+                    {%- endif -%}
                 </div>
-            {%- elseif conversation_chat -%}
-                {{ vue(render_pass, conversation_chat.component, conversation_chat.props) }}
-            {%- else -%}
-                <p class="block block--padded">{{ '@page::empty'|trans }}</p>
-            {%- endif -%}
+            </div>
         </div>
     </div>
 {%- endblock -%}

@@ -4,6 +4,7 @@ en:
   empty: "No conversation yet: start one with the + below."
   start: "Start a conversation"
   search: "Someone to write to…"
+  start_help: "Find the person by their name or their address: your conversation with them opens here."
 
 fr:
   page_title: "Conversations"
@@ -11,6 +12,7 @@ fr:
   empty: "Aucune conversation pour l’instant : démarrez-en une avec le + en dessous."
   start: "Démarrer une conversation"
   search: "Quelqu’un à qui écrire…"
+  start_help: "Retrouvez la personne par son nom ou son adresse : votre conversation avec elle s’ouvre ici."
 
 ar:
   page_title: "المحادثات"
@@ -18,6 +20,7 @@ ar:
   empty: "No conversation yet: start one with the + below."
   start: "Start a conversation"
   search: "Someone to write to…"
+  start_help: "Find the person by their name or their address: your conversation with them opens here."
 
 bn:
   page_title: "কথোপকথন"
@@ -25,6 +28,7 @@ bn:
   empty: "No conversation yet: start one with the + below."
   start: "Start a conversation"
   search: "Someone to write to…"
+  start_help: "Find the person by their name or their address: your conversation with them opens here."
 
 de:
   page_title: "Gespräche"
@@ -32,6 +36,7 @@ de:
   empty: "No conversation yet: start one with the + below."
   start: "Start a conversation"
   search: "Someone to write to…"
+  start_help: "Find the person by their name or their address: your conversation with them opens here."
 
 es:
   page_title: "Conversaciones"
@@ -39,6 +44,7 @@ es:
   empty: "No conversation yet: start one with the + below."
   start: "Start a conversation"
   search: "Someone to write to…"
+  start_help: "Find the person by their name or their address: your conversation with them opens here."
 
 fa:
   page_title: "گفتگوها"
@@ -46,6 +52,7 @@ fa:
   empty: "No conversation yet: start one with the + below."
   start: "Start a conversation"
   search: "Someone to write to…"
+  start_help: "Find the person by their name or their address: your conversation with them opens here."
 
 fi:
   page_title: "Keskustelut"
@@ -53,6 +60,7 @@ fi:
   empty: "No conversation yet: start one with the + below."
   start: "Start a conversation"
   search: "Someone to write to…"
+  start_help: "Find the person by their name or their address: your conversation with them opens here."
 
 he:
   page_title: "שיחות"
@@ -60,6 +68,7 @@ he:
   empty: "No conversation yet: start one with the + below."
   start: "Start a conversation"
   search: "Someone to write to…"
+  start_help: "Find the person by their name or their address: your conversation with them opens here."
 
 hi:
   page_title: "बातचीत"
@@ -67,6 +76,7 @@ hi:
   empty: "No conversation yet: start one with the + below."
   start: "Start a conversation"
   search: "Someone to write to…"
+  start_help: "Find the person by their name or their address: your conversation with them opens here."
 
 id:
   page_title: "Percakapan"
@@ -74,6 +84,7 @@ id:
   empty: "No conversation yet: start one with the + below."
   start: "Start a conversation"
   search: "Someone to write to…"
+  start_help: "Find the person by their name or their address: your conversation with them opens here."
 
 it:
   page_title: "Conversazioni"
@@ -81,6 +92,7 @@ it:
   empty: "No conversation yet: start one with the + below."
   start: "Start a conversation"
   search: "Someone to write to…"
+  start_help: "Find the person by their name or their address: your conversation with them opens here."
 
 ja:
   page_title: "会話"
@@ -88,6 +100,7 @@ ja:
   empty: "No conversation yet: start one with the + below."
   start: "Start a conversation"
   search: "Someone to write to…"
+  start_help: "Find the person by their name or their address: your conversation with them opens here."
 
 ko:
   page_title: "대화"
@@ -95,6 +108,7 @@ ko:
   empty: "No conversation yet: start one with the + below."
   start: "Start a conversation"
   search: "Someone to write to…"
+  start_help: "Find the person by their name or their address: your conversation with them opens here."
 
 nl:
   page_title: "Gesprekken"
@@ -102,6 +116,7 @@ nl:
   empty: "No conversation yet: start one with the + below."
   start: "Start a conversation"
   search: "Someone to write to…"
+  start_help: "Find the person by their name or their address: your conversation with them opens here."
 
 pl:
   page_title: "Rozmowy"
@@ -109,6 +124,7 @@ pl:
   empty: "No conversation yet: start one with the + below."
   start: "Start a conversation"
   search: "Someone to write to…"
+  start_help: "Find the person by their name or their address: your conversation with them opens here."
 
 pt_BR:
   page_title: "Conversas"
@@ -116,6 +132,7 @@ pt_BR:
   empty: "No conversation yet: start one with the + below."
   start: "Start a conversation"
   search: "Someone to write to…"
+  start_help: "Find the person by their name or their address: your conversation with them opens here."
 
 ru:
   page_title: "Разговоры"
@@ -123,6 +140,7 @@ ru:
   empty: "No conversation yet: start one with the + below."
   start: "Start a conversation"
   search: "Someone to write to…"
+  start_help: "Find the person by their name or their address: your conversation with them opens here."
 
 th:
   page_title: "บทสนทนา"
@@ -130,6 +148,7 @@ th:
   empty: "No conversation yet: start one with the + below."
   start: "Start a conversation"
   search: "Someone to write to…"
+  start_help: "Find the person by their name or their address: your conversation with them opens here."
 
 tr:
   page_title: "Konuşmalar"
@@ -137,6 +156,7 @@ tr:
   empty: "No conversation yet: start one with the + below."
   start: "Start a conversation"
   search: "Someone to write to…"
+  start_help: "Find the person by their name or their address: your conversation with them opens here."
 
 ur:
   page_title: "گفتگوئیں"
@@ -144,6 +164,7 @@ ur:
   empty: "No conversation yet: start one with the + below."
   start: "Start a conversation"
   search: "Someone to write to…"
+  start_help: "Find the person by their name or their address: your conversation with them opens here."
 
 vi:
   page_title: "Cuộc trò chuyện"
@@ -151,6 +172,7 @@ vi:
   empty: "No conversation yet: start one with the + below."
   start: "Start a conversation"
   search: "Someone to write to…"
+  start_help: "Find the person by their name or their address: your conversation with them opens here."
 
 zh:
   page_title: "对话"
@@ -158,3 +180,4 @@ zh:
   empty: "No conversation yet: start one with the + below."
   start: "Start a conversation"
   search: "Someone to write to…"
+  start_help: "Find the person by their name or their address: your conversation with them opens here."
