@@ -37,6 +37,13 @@
                             }) }}
                         </div>
                     {%- elseif conversation_chat -%}
+                        {#- Over the chat alone, not the column of faces: who
+                            one talks with, and what the chat sends to its
+                            head — its sound (components/zone-head-actions). -#}
+                        <div class="toolbar toolbar--compact zone--head">
+                            <span class="toolbar--title">{{ (conversation_tabs|filter(tab => tab.active)|first).label|default('') }}</span>
+                            <div class="toolbar--group" data-zone-head-actions></div>
+                        </div>
                         {{ vue(render_pass, conversation_chat.component, conversation_chat.props) }}
                     {%- else -%}
                         <p class="empty">{{ '@page::empty'|trans }}</p>
