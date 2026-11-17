@@ -30,7 +30,7 @@
                     {%- if conversation_starting -%}
                         <div class="zone--content stack--vertical" data-target-embedded="self">
                             <h2>{{ '@page::start'|trans }}</h2>
-                            <p>{{ '@page::start_help'|trans }}</p>
+                            <p class="lead">{{ '@page::start_help'|trans }}</p>
                             {{ vue(render_pass, '@WexampleSymfonyConversationDsBundle/vue/conversation-start', {
                                 withUrl: path('conversation_index') ~ 'with/__user__',
                                 placeholder: '@page::search'|trans,
