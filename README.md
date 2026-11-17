@@ -1,6 +1,6 @@
 # symfony-conversation-ds
 
-Version: 4.0.1
+Version: 4.0.2
 
 Design-system screens for symfony-conversation
 
